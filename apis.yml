@@ -1,0 +1,67 @@
+aid: hibob
+name: HiBob
+description: >-
+  HiBob (Bob) is a modern HR platform for growing companies, providing core
+  HRIS, employee data management, time off, performance, compensation,
+  workflows, surveys, and people analytics. The Bob Public API enables
+  programmatic access to employee data, time off, tasks, documents, and
+  events via webhooks for HRIS integrations and people-data automation.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - HR
+  - HRIS
+  - People Operations
+  - Employee Data
+  - Time Off
+  - HR Tech
+url: https://raw.githubusercontent.com/api-evangelist/hibob/refs/heads/main/apis.yml
+created: '2026-05-11'
+modified: '2026-05-11'
+specificationVersion: '0.19'
+apis:
+  - aid: hibob:public-api
+    name: Bob Public API
+    description: >-
+      REST API for managing employee data, time off, tasks, documents, and
+      lifecycle events in HiBob. Authentication uses HTTP Basic with an API
+      service user ID and token (Base64-encoded).
+    humanURL: https://apidocs.hibob.com/
+    baseURL: https://api.hibob.com/v1
+    tags:
+      - Employees
+      - Time Off
+      - Tasks
+      - Documents
+    properties:
+      - type: Documentation
+        url: https://apidocs.hibob.com/
+      - type: Getting Started
+        url: https://apidocs.hibob.com/reference/getting-started-with-bob-api
+      - type: Authentication
+        url: https://apidocs.hibob.com/reference/authorization
+  - aid: hibob:webhooks
+    name: Bob Webhooks
+    description: >-
+      Webhooks for receiving real-time notifications of employee lifecycle and
+      data change events from HiBob to drive downstream automation.
+    humanURL: https://apidocs.hibob.com/docs/webhooks
+    baseURL: https://apidocs.hibob.com/docs/webhooks
+    tags:
+      - Webhooks
+      - Events
+    properties:
+      - type: Documentation
+        url: https://apidocs.hibob.com/docs/webhooks
+common:
+  - type: Website
+    url: https://www.hibob.com
+  - type: Documentation
+    url: https://apidocs.hibob.com/
+  - type: Support
+    url: https://help.hibob.com
+  - type: Pricing
+    url: https://www.hibob.com/pricing/
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
