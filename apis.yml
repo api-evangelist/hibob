@@ -36,7 +36,7 @@ apis:
     properties:
       - type: Documentation
         url: https://apidocs.hibob.com/
-      - type: Getting Started
+      - type: GettingStarted
         url: https://apidocs.hibob.com/reference/getting-started-with-bob-api
       - type: Authentication
         url: https://apidocs.hibob.com/reference/authorization
