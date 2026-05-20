@@ -54,6 +54,10 @@ apis:
       - type: Documentation
         url: https://apidocs.hibob.com/docs/webhooks
 common:
+  - type: GitHubOrganization
+    url: https://github.com/Hibob
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/hibob
   - type: Website
     url: https://www.hibob.com
   - type: Documentation
