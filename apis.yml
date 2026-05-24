@@ -66,6 +66,8 @@ common:
     url: https://help.hibob.com
   - type: Pricing
     url: https://www.hibob.com/pricing/
+  - type: LLMsTxt
+    url: https://api.hibob.com/llms.txt
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
