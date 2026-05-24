@@ -1,0 +1,397 @@
+openapi: 3.1.0
+info:
+  title: Bob (HiBob) Public API
+  description: |
+    Bob's Public API for managing employees, attendance, projects, hiring,
+    goals, documents, learning, and webhooks. Generated best-effort from
+    public docs at https://apidocs.hibob.com/.
+  version: "1.0.0"
+  contact:
+    name: HiBob
+    url: https://apidocs.hibob.com/
+servers:
+  - url: https://api.hibob.com/v1
+    description: Production
+security:
+  - serviceUserAuth: []
+tags:
+  - name: People
+  - name: Employee Tables
+  - name: Attendance
+  - name: Projects
+  - name: Hiring
+  - name: Goals
+  - name: Documents
+  - name: Learning
+paths:
+  /people/search:
+    post:
+      tags: [People]
+      summary: Search for employees
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                fields: { type: array, items: { type: string } }
+                showInactive: { type: boolean }
+                filters: { type: array, items: { type: object } }
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  employees:
+                    type: array
+                    items: { $ref: "#/components/schemas/Employee" }
+  /people:
+    post:
+      tags: [People]
+      summary: Create employee
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/Employee" }
+      responses:
+        "201":
+          description: Created
+  /people/{identifier}:
+    put:
+      tags: [People]
+      summary: Update employee
+      parameters:
+        - $ref: "#/components/parameters/Identifier"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/Employee" }
+      responses:
+        "200":
+          description: OK
+    post:
+      tags: [People]
+      summary: Read employee by ID
+      parameters:
+        - $ref: "#/components/parameters/Identifier"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Employee" }
+  /profiles:
+    get:
+      tags: [People]
+      summary: Read public profile section of all active employees
+      responses:
+        "200":
+          description: OK
+  /people/{id}/employment:
+    get:
+      tags: [Employee Tables]
+      summary: List employment history
+      parameters:
+        - $ref: "#/components/parameters/Id"
+      responses:
+        "200":
+          description: OK
+  /people/{id}/salaries:
+    get:
+      tags: [Employee Tables]
+      summary: List employee's salary history
+      parameters:
+        - $ref: "#/components/parameters/Id"
+      responses:
+        "200":
+          description: OK
+  /people/{id}/work:
+    get:
+      tags: [Employee Tables]
+      summary: List work history
+      parameters:
+        - $ref: "#/components/parameters/Id"
+      responses:
+        "200":
+          description: OK
+  /people/{id}/bank-accounts:
+    post:
+      tags: [Employee Tables]
+      summary: Create bank account entry
+      parameters:
+        - $ref: "#/components/parameters/Id"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                accountNumber: { type: string }
+                routingNumber: { type: string }
+                accountType: { type: string }
+      responses:
+        "201":
+          description: Created
+  /attendance/entries/search:
+    post:
+      tags: [Attendance]
+      summary: Fetch attendance entries
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                fromDate: { type: string, format: date }
+                toDate: { type: string, format: date }
+                employeeIds: { type: array, items: { type: string } }
+      responses:
+        "200":
+          description: OK
+  /attendance/entries:
+    post:
+      tags: [Attendance]
+      summary: Bulk create attendance entries
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items: { $ref: "#/components/schemas/AttendanceEntry" }
+      responses:
+        "201":
+          description: Created
+  /attendance/employees/{employeeId}/entries:
+    patch:
+      tags: [Attendance]
+      summary: Update entries
+      parameters:
+        - name: employeeId
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/AttendanceEntry" }
+      responses:
+        "200":
+          description: OK
+  /attendance-entries/{entryId}:
+    post:
+      tags: [Attendance]
+      summary: Delete entry
+      parameters:
+        - name: entryId
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: OK
+  /attendance/projects/search:
+    post:
+      tags: [Projects]
+      summary: Search projects
+      responses:
+        "200":
+          description: OK
+  /attendance/projects:
+    post:
+      tags: [Projects]
+      summary: Create projects
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name: { type: string }
+                code: { type: string }
+      responses:
+        "201":
+          description: Created
+  /attendance/project-tasks:
+    post:
+      tags: [Projects]
+      summary: Create project tasks
+      responses:
+        "201":
+          description: Created
+  /hiring/applications/search:
+    post:
+      tags: [Hiring]
+      summary: Search applications
+      responses:
+        "200":
+          description: OK
+  /hiring/candidates/search:
+    post:
+      tags: [Hiring]
+      summary: Search candidates
+      responses:
+        "200":
+          description: OK
+  /hiring/job-openings/search:
+    post:
+      tags: [Hiring]
+      summary: Search job openings
+      responses:
+        "200":
+          description: OK
+  /hiring/job-ads/search:
+    post:
+      tags: [Hiring]
+      summary: Retrieve active career page job ads
+      responses:
+        "200":
+          description: OK
+  /goals/goals/search:
+    post:
+      tags: [Goals]
+      summary: Search goals
+      responses:
+        "200":
+          description: OK
+  /goals/goals:
+    post:
+      tags: [Goals]
+      summary: Create goals
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/Goal" }
+      responses:
+        "201":
+          description: Created
+  /goals/goals/{goalId}:
+    patch:
+      tags: [Goals]
+      summary: Update goal
+      parameters:
+        - name: goalId
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/Goal" }
+      responses:
+        "200":
+          description: OK
+  /docs/people/{id}/confidential:
+    post:
+      tags: [Documents]
+      summary: Upload file to confidential folder
+      parameters:
+        - $ref: "#/components/parameters/Id"
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+      responses:
+        "201":
+          description: Created
+  /docs/people/{id}/confidential/{docid}:
+    delete:
+      tags: [Documents]
+      summary: Delete document
+      parameters:
+        - $ref: "#/components/parameters/Id"
+        - name: docid
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        "204":
+          description: Deleted
+  /docs/people/{id}:
+    get:
+      tags: [Documents]
+      summary: Download list of documents of an employee
+      parameters:
+        - $ref: "#/components/parameters/Id"
+      responses:
+        "200":
+          description: OK
+  /learning/lms-integrations:
+    post:
+      tags: [Learning]
+      summary: Create LMS integration
+      responses:
+        "201":
+          description: Created
+  /learning/lms-integrations/{provider-identifier}/training-content:
+    post:
+      tags: [Learning]
+      summary: Create training content
+      parameters:
+        - name: provider-identifier
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        "201":
+          description: Created
+components:
+  securitySchemes:
+    serviceUserAuth:
+      type: http
+      scheme: basic
+      description: Service user credentials passed via HTTP Basic Authorization header
+  parameters:
+    Identifier:
+      name: identifier
+      in: path
+      required: true
+      schema: { type: string }
+    Id:
+      name: id
+      in: path
+      required: true
+      schema: { type: string }
+  schemas:
+    Employee:
+      type: object
+      properties:
+        id: { type: string }
+        firstName: { type: string }
+        surname: { type: string }
+        email: { type: string }
+        displayName: { type: string }
+    AttendanceEntry:
+      type: object
+      properties:
+        employeeId: { type: string }
+        date: { type: string, format: date }
+        startTime: { type: string }
+        endTime: { type: string }
+    Goal:
+      type: object
+      properties:
+        id: { type: string }
+        title: { type: string }
+        description: { type: string }
+        ownerId: { type: string }
+        dueDate: { type: string, format: date }
+        status: { type: string }
