@@ -1,0 +1,535 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Bob (HiBob) Public API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "People",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search for employees",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.hibob.com/v1/people/search",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Search for employees"
+        },
+        {
+          "info": {
+            "name": "Create employee",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.hibob.com/v1/people",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create employee"
+        },
+        {
+          "info": {
+            "name": "Read employee by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.hibob.com/v1/people/:identifier",
+            "params": [
+              {
+                "name": "identifier",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Read employee by ID"
+        },
+        {
+          "info": {
+            "name": "Update employee",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.hibob.com/v1/people/:identifier",
+            "params": [
+              {
+                "name": "identifier",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update employee"
+        },
+        {
+          "info": {
+            "name": "Read public profile section of all active employees",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hibob.com/v1/profiles"
+          },
+          "docs": "Read public profile section of all active employees"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Employee Tables",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List employment history",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hibob.com/v1/people/:id/employment",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List employment history"
+        },
+        {
+          "info": {
+            "name": "List employee's salary history",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hibob.com/v1/people/:id/salaries",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List employee's salary history"
+        },
+        {
+          "info": {
+            "name": "List work history",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hibob.com/v1/people/:id/work",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List work history"
+        },
+        {
+          "info": {
+            "name": "Create bank account entry",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.hibob.com/v1/people/:id/bank-accounts",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create bank account entry"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Attendance",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Fetch attendance entries",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.hibob.com/v1/attendance/entries/search",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Fetch attendance entries"
+        },
+        {
+          "info": {
+            "name": "Bulk create attendance entries",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.hibob.com/v1/attendance/entries",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Bulk create attendance entries"
+        },
+        {
+          "info": {
+            "name": "Update entries",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.hibob.com/v1/attendance/employees/:employeeId/entries",
+            "params": [
+              {
+                "name": "employeeId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update entries"
+        },
+        {
+          "info": {
+            "name": "Delete entry",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.hibob.com/v1/attendance-entries/:entryId",
+            "params": [
+              {
+                "name": "entryId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete entry"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Projects",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search projects",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.hibob.com/v1/attendance/projects/search"
+          },
+          "docs": "Search projects"
+        },
+        {
+          "info": {
+            "name": "Create projects",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.hibob.com/v1/attendance/projects",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create projects"
+        },
+        {
+          "info": {
+            "name": "Create project tasks",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.hibob.com/v1/attendance/project-tasks"
+          },
+          "docs": "Create project tasks"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Hiring",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search applications",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.hibob.com/v1/hiring/applications/search"
+          },
+          "docs": "Search applications"
+        },
+        {
+          "info": {
+            "name": "Search candidates",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.hibob.com/v1/hiring/candidates/search"
+          },
+          "docs": "Search candidates"
+        },
+        {
+          "info": {
+            "name": "Search job openings",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.hibob.com/v1/hiring/job-openings/search"
+          },
+          "docs": "Search job openings"
+        },
+        {
+          "info": {
+            "name": "Retrieve active career page job ads",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.hibob.com/v1/hiring/job-ads/search"
+          },
+          "docs": "Retrieve active career page job ads"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Goals",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search goals",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.hibob.com/v1/goals/goals/search"
+          },
+          "docs": "Search goals"
+        },
+        {
+          "info": {
+            "name": "Create goals",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.hibob.com/v1/goals/goals",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create goals"
+        },
+        {
+          "info": {
+            "name": "Update goal",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.hibob.com/v1/goals/goals/:goalId",
+            "params": [
+              {
+                "name": "goalId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update goal"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Documents",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Upload file to confidential folder",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.hibob.com/v1/docs/people/:id/confidential",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "file",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Upload file to confidential folder"
+        },
+        {
+          "info": {
+            "name": "Delete document",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.hibob.com/v1/docs/people/:id/confidential/:docid",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "docid",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete document"
+        },
+        {
+          "info": {
+            "name": "Download list of documents of an employee",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hibob.com/v1/docs/people/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Download list of documents of an employee"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Learning",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create LMS integration",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.hibob.com/v1/learning/lms-integrations"
+          },
+          "docs": "Create LMS integration"
+        },
+        {
+          "info": {
+            "name": "Create training content",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.hibob.com/v1/learning/lms-integrations/:provider-identifier/training-content",
+            "params": [
+              {
+                "name": "provider-identifier",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Create training content"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
