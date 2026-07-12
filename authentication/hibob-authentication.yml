@@ -1,0 +1,13 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/hibob-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: serviceUserAuth
+  type: http
+  scheme: basic
+  description: Service user credentials passed via HTTP Basic Authorization header
+  sources:
+  - openapi/hibob-openapi.yml

@@ -54,6 +54,10 @@ apis:
       - type: Documentation
         url: https://apidocs.hibob.com/docs/webhooks
 common:
+  - type: DomainSecurity
+    url: security/hibob-domain-security.yml
+  - type: Authentication
+    url: authentication/hibob-authentication.yml
   - type: GitHubOrganization
     url: https://github.com/Hibob
   - type: LinkedIn
