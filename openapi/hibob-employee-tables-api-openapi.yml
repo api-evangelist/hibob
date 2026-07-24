@@ -1,0 +1,88 @@
+openapi: 3.1.0
+info:
+  title: Bob (HiBob) Public Attendance Employee Tables API
+  description: 'Bob''s Public API for managing employees, attendance, projects, hiring,
+
+    goals, documents, learning, and webhooks. Generated best-effort from
+
+    public docs at https://apidocs.hibob.com/.
+
+    '
+  version: 1.0.0
+  contact:
+    name: HiBob
+    url: https://apidocs.hibob.com/
+servers:
+- url: https://api.hibob.com/v1
+  description: Production
+security:
+- serviceUserAuth: []
+tags:
+- name: Employee Tables
+paths:
+  /people/{id}/employment:
+    get:
+      tags:
+      - Employee Tables
+      summary: List employment history
+      parameters:
+      - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          description: OK
+  /people/{id}/salaries:
+    get:
+      tags:
+      - Employee Tables
+      summary: List employee's salary history
+      parameters:
+      - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          description: OK
+  /people/{id}/work:
+    get:
+      tags:
+      - Employee Tables
+      summary: List work history
+      parameters:
+      - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          description: OK
+  /people/{id}/bank-accounts:
+    post:
+      tags:
+      - Employee Tables
+      summary: Create bank account entry
+      parameters:
+      - $ref: '#/components/parameters/Id'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                accountNumber:
+                  type: string
+                routingNumber:
+                  type: string
+                accountType:
+                  type: string
+      responses:
+        '201':
+          description: Created
+components:
+  parameters:
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  securitySchemes:
+    serviceUserAuth:
+      type: http
+      scheme: basic
+      description: Service user credentials passed via HTTP Basic Authorization header

@@ -1,0 +1,63 @@
+openapi: 3.1.0
+info:
+  title: Bob (HiBob) Public Attendance Projects API
+  description: 'Bob''s Public API for managing employees, attendance, projects, hiring,
+
+    goals, documents, learning, and webhooks. Generated best-effort from
+
+    public docs at https://apidocs.hibob.com/.
+
+    '
+  version: 1.0.0
+  contact:
+    name: HiBob
+    url: https://apidocs.hibob.com/
+servers:
+- url: https://api.hibob.com/v1
+  description: Production
+security:
+- serviceUserAuth: []
+tags:
+- name: Projects
+paths:
+  /attendance/projects/search:
+    post:
+      tags:
+      - Projects
+      summary: Search projects
+      responses:
+        '200':
+          description: OK
+  /attendance/projects:
+    post:
+      tags:
+      - Projects
+      summary: Create projects
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                code:
+                  type: string
+      responses:
+        '201':
+          description: Created
+  /attendance/project-tasks:
+    post:
+      tags:
+      - Projects
+      summary: Create project tasks
+      responses:
+        '201':
+          description: Created
+components:
+  securitySchemes:
+    serviceUserAuth:
+      type: http
+      scheme: basic
+      description: Service user credentials passed via HTTP Basic Authorization header

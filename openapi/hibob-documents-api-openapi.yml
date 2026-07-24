@@ -1,0 +1,80 @@
+openapi: 3.1.0
+info:
+  title: Bob (HiBob) Public Attendance Documents API
+  description: 'Bob''s Public API for managing employees, attendance, projects, hiring,
+
+    goals, documents, learning, and webhooks. Generated best-effort from
+
+    public docs at https://apidocs.hibob.com/.
+
+    '
+  version: 1.0.0
+  contact:
+    name: HiBob
+    url: https://apidocs.hibob.com/
+servers:
+- url: https://api.hibob.com/v1
+  description: Production
+security:
+- serviceUserAuth: []
+tags:
+- name: Documents
+paths:
+  /docs/people/{id}/confidential:
+    post:
+      tags:
+      - Documents
+      summary: Upload file to confidential folder
+      parameters:
+      - $ref: '#/components/parameters/Id'
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+      responses:
+        '201':
+          description: Created
+  /docs/people/{id}/confidential/{docid}:
+    delete:
+      tags:
+      - Documents
+      summary: Delete document
+      parameters:
+      - $ref: '#/components/parameters/Id'
+      - name: docid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: Deleted
+  /docs/people/{id}:
+    get:
+      tags:
+      - Documents
+      summary: Download list of documents of an employee
+      parameters:
+      - $ref: '#/components/parameters/Id'
+      responses:
+        '200':
+          description: OK
+components:
+  parameters:
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  securitySchemes:
+    serviceUserAuth:
+      type: http
+      scheme: basic
+      description: Service user credentials passed via HTTP Basic Authorization header

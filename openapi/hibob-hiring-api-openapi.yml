@@ -1,0 +1,60 @@
+openapi: 3.1.0
+info:
+  title: Bob (HiBob) Public Attendance Hiring API
+  description: 'Bob''s Public API for managing employees, attendance, projects, hiring,
+
+    goals, documents, learning, and webhooks. Generated best-effort from
+
+    public docs at https://apidocs.hibob.com/.
+
+    '
+  version: 1.0.0
+  contact:
+    name: HiBob
+    url: https://apidocs.hibob.com/
+servers:
+- url: https://api.hibob.com/v1
+  description: Production
+security:
+- serviceUserAuth: []
+tags:
+- name: Hiring
+paths:
+  /hiring/applications/search:
+    post:
+      tags:
+      - Hiring
+      summary: Search applications
+      responses:
+        '200':
+          description: OK
+  /hiring/candidates/search:
+    post:
+      tags:
+      - Hiring
+      summary: Search candidates
+      responses:
+        '200':
+          description: OK
+  /hiring/job-openings/search:
+    post:
+      tags:
+      - Hiring
+      summary: Search job openings
+      responses:
+        '200':
+          description: OK
+  /hiring/job-ads/search:
+    post:
+      tags:
+      - Hiring
+      summary: Retrieve active career page job ads
+      responses:
+        '200':
+          description: OK
+components:
+  securitySchemes:
+    serviceUserAuth:
+      type: http
+      scheme: basic
+      description: Service user credentials passed via HTTP Basic Authorization header

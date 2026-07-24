@@ -1,0 +1,87 @@
+openapi: 3.1.0
+info:
+  title: Bob (HiBob) Public Attendance Goals API
+  description: 'Bob''s Public API for managing employees, attendance, projects, hiring,
+
+    goals, documents, learning, and webhooks. Generated best-effort from
+
+    public docs at https://apidocs.hibob.com/.
+
+    '
+  version: 1.0.0
+  contact:
+    name: HiBob
+    url: https://apidocs.hibob.com/
+servers:
+- url: https://api.hibob.com/v1
+  description: Production
+security:
+- serviceUserAuth: []
+tags:
+- name: Goals
+paths:
+  /goals/goals/search:
+    post:
+      tags:
+      - Goals
+      summary: Search goals
+      responses:
+        '200':
+          description: OK
+  /goals/goals:
+    post:
+      tags:
+      - Goals
+      summary: Create goals
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Goal'
+      responses:
+        '201':
+          description: Created
+  /goals/goals/{goalId}:
+    patch:
+      tags:
+      - Goals
+      summary: Update goal
+      parameters:
+      - name: goalId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Goal'
+      responses:
+        '200':
+          description: OK
+components:
+  schemas:
+    Goal:
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        description:
+          type: string
+        ownerId:
+          type: string
+        dueDate:
+          type: string
+          format: date
+        status:
+          type: string
+  securitySchemes:
+    serviceUserAuth:
+      type: http
+      scheme: basic
+      description: Service user credentials passed via HTTP Basic Authorization header
