@@ -7,7 +7,19 @@ description: >-
   programmatic access to employee data, time off, tasks, documents, and
   events via webhooks for HRIS integrations and people-data automation.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/hibob.png
 tags:
   - HR
   - HRIS
@@ -20,39 +32,118 @@ created: '2026-05-11'
 modified: '2026-05-11'
 specificationVersion: '0.19'
 apis:
-  - aid: hibob:public-api
-    name: Bob Public API
-    description: >-
-      REST API for managing employee data, time off, tasks, documents, and
-      lifecycle events in HiBob. Authentication uses HTTP Basic with an API
-      service user ID and token (Base64-encoded).
-    humanURL: https://apidocs.hibob.com/
-    baseURL: https://api.hibob.com/v1
-    tags:
-      - Employees
-      - Time Off
-      - Tasks
-      - Documents
-    properties:
-      - type: Documentation
-        url: https://apidocs.hibob.com/
-      - type: GettingStarted
-        url: https://apidocs.hibob.com/reference/getting-started-with-bob-api
-      - type: Authentication
-        url: https://apidocs.hibob.com/reference/authorization
-  - aid: hibob:webhooks
-    name: Bob Webhooks
-    description: >-
-      Webhooks for receiving real-time notifications of employee lifecycle and
-      data change events from HiBob to drive downstream automation.
-    humanURL: https://apidocs.hibob.com/docs/webhooks
-    baseURL: https://apidocs.hibob.com/docs/webhooks
-    tags:
-      - Webhooks
-      - Events
-    properties:
-      - type: Documentation
-        url: https://apidocs.hibob.com/docs/webhooks
+- aid: hibob:public-api
+  name: Bob Public API
+  description: >-
+    REST API for managing employee data, time off, tasks, documents, and lifecycle events in HiBob. Authentication
+    uses HTTP Basic with an API service user ID and token (Base64-encoded).
+  humanURL: https://apidocs.hibob.com/
+  baseURL: https://api.hibob.com/v1
+  tags:
+  - Employees
+  - Time Off
+  - Tasks
+  - Documents
+  properties:
+  - type: Documentation
+    url: https://apidocs.hibob.com/
+  - type: GettingStarted
+    url: https://apidocs.hibob.com/reference/getting-started-with-bob-api
+  - type: Authentication
+    url: https://apidocs.hibob.com/reference/authorization
+- aid: hibob:webhooks
+  name: Bob Webhooks
+  description: >-
+    Webhooks for receiving real-time notifications of employee lifecycle and data change events from HiBob
+    to drive downstream automation.
+  humanURL: https://apidocs.hibob.com/docs/webhooks
+  baseURL: https://apidocs.hibob.com/docs/webhooks
+  tags:
+  - Webhooks
+  - Events
+  properties:
+  - type: Documentation
+    url: https://apidocs.hibob.com/docs/webhooks
+- aid: hibob:hibob-attendance-api
+  name: HiBob Attendance API
+  description: The Attendance API from HiBob — 4 operation(s) for attendance.
+  humanURL: https://apidocs.hibob.com/
+  baseURL: https://api.hibob.com/v1
+  tags:
+  - Attendance
+  properties:
+  - type: OpenAPI
+    url: openapi/hibob-attendance-api-openapi.yml
+- aid: hibob:hibob-documents-api
+  name: HiBob Documents API
+  description: The Documents API from HiBob — 3 operation(s) for documents.
+  humanURL: https://apidocs.hibob.com/
+  baseURL: https://api.hibob.com/v1
+  tags:
+  - Documents
+  properties:
+  - type: OpenAPI
+    url: openapi/hibob-documents-api-openapi.yml
+- aid: hibob:hibob-employee-tables-api
+  name: HiBob Employee Tables API
+  description: The Employee Tables API from HiBob — 4 operation(s) for employee tables.
+  humanURL: https://apidocs.hibob.com/
+  baseURL: https://api.hibob.com/v1
+  tags:
+  - Employee Tables
+  properties:
+  - type: OpenAPI
+    url: openapi/hibob-employee-tables-api-openapi.yml
+- aid: hibob:hibob-goals-api
+  name: HiBob Goals API
+  description: The Goals API from HiBob — 3 operation(s) for goals.
+  humanURL: https://apidocs.hibob.com/
+  baseURL: https://api.hibob.com/v1
+  tags:
+  - Goals
+  properties:
+  - type: OpenAPI
+    url: openapi/hibob-goals-api-openapi.yml
+- aid: hibob:hibob-hiring-api
+  name: HiBob Hiring API
+  description: The Hiring API from HiBob — 4 operation(s) for hiring.
+  humanURL: https://apidocs.hibob.com/
+  baseURL: https://api.hibob.com/v1
+  tags:
+  - Hiring
+  properties:
+  - type: OpenAPI
+    url: openapi/hibob-hiring-api-openapi.yml
+- aid: hibob:hibob-learning-api
+  name: HiBob Learning API
+  description: The Learning API from HiBob — 2 operation(s) for learning.
+  humanURL: https://apidocs.hibob.com/
+  baseURL: https://api.hibob.com/v1
+  tags:
+  - Learning
+  properties:
+  - type: OpenAPI
+    url: openapi/hibob-learning-api-openapi.yml
+- aid: hibob:hibob-people-api
+  name: HiBob People API
+  description: The People API from HiBob — 4 operation(s) for people.
+  humanURL: https://apidocs.hibob.com/
+  baseURL: https://api.hibob.com/v1
+  tags:
+  - People
+  properties:
+  - type: OpenAPI
+    url: openapi/hibob-people-api-openapi.yml
+- aid: hibob:hibob-projects-api
+  name: HiBob Projects API
+  description: The Projects API from HiBob — 3 operation(s) for projects.
+  humanURL: https://apidocs.hibob.com/
+  baseURL: https://api.hibob.com/v1
+  tags:
+  - Projects
+  properties:
+  - type: OpenAPI
+    url: openapi/hibob-projects-api-openapi.yml
 common:
   - type: AgenticAccess
     url: agentic-access/hibob-agentic-access.yml
