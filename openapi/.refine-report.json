@@ -1,0 +1,28 @@
+{
+  "provider": "hibob",
+  "sources": [
+    "hibob-attendance-api-openapi.yml",
+    "hibob-documents-api-openapi.yml",
+    "hibob-employee-tables-api-openapi.yml",
+    "hibob-goals-api-openapi.yml",
+    "hibob-hiring-api-openapi.yml",
+    "hibob-learning-api-openapi.yml",
+    "hibob-people-api-openapi.yml",
+    "hibob-projects-api-openapi.yml"
+  ],
+  "outputs": [
+    "hibob-attendance-api-openapi.yml",
+    "hibob-documents-api-openapi.yml",
+    "hibob-employee-tables-api-openapi.yml",
+    "hibob-goals-api-openapi.yml",
+    "hibob-hiring-api-openapi.yml",
+    "hibob-learning-api-openapi.yml",
+    "hibob-people-api-openapi.yml",
+    "hibob-projects-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
