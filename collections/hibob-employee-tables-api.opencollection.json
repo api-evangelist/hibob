@@ -1,0 +1,101 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Bob (HiBob) Public Attendance Employee Tables API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Employee Tables",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List employment history",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hibob.com/v1/people/:id/employment",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List employment history"
+        },
+        {
+          "info": {
+            "name": "List employee's salary history",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hibob.com/v1/people/:id/salaries",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List employee's salary history"
+        },
+        {
+          "info": {
+            "name": "List work history",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hibob.com/v1/people/:id/work",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List work history"
+        },
+        {
+          "info": {
+            "name": "Create bank account entry",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.hibob.com/v1/people/:id/bank-accounts",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create bank account entry"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

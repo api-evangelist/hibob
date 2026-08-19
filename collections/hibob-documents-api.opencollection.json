@@ -1,0 +1,94 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Bob (HiBob) Public Attendance Documents API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Documents",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Upload file to confidential folder",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.hibob.com/v1/docs/people/:id/confidential",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "file",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Upload file to confidential folder"
+        },
+        {
+          "info": {
+            "name": "Delete document",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.hibob.com/v1/docs/people/:id/confidential/:docid",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "docid",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete document"
+        },
+        {
+          "info": {
+            "name": "Download list of documents of an employee",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hibob.com/v1/docs/people/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Download list of documents of an employee"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

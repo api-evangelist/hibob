@@ -1,0 +1,95 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Bob (HiBob) Public Attendance API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Attendance",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Fetch attendance entries",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.hibob.com/v1/attendance/entries/search",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Fetch attendance entries"
+        },
+        {
+          "info": {
+            "name": "Bulk create attendance entries",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.hibob.com/v1/attendance/entries",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Bulk create attendance entries"
+        },
+        {
+          "info": {
+            "name": "Update entries",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.hibob.com/v1/attendance/employees/:employeeId/entries",
+            "params": [
+              {
+                "name": "employeeId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update entries"
+        },
+        {
+          "info": {
+            "name": "Delete entry",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.hibob.com/v1/attendance-entries/:entryId",
+            "params": [
+              {
+                "name": "entryId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete entry"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

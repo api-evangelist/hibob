@@ -1,0 +1,73 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Bob (HiBob) Public Attendance Goals API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Goals",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search goals",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.hibob.com/v1/goals/goals/search"
+          },
+          "docs": "Search goals"
+        },
+        {
+          "info": {
+            "name": "Create goals",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.hibob.com/v1/goals/goals",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create goals"
+        },
+        {
+          "info": {
+            "name": "Update goal",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.hibob.com/v1/goals/goals/:goalId",
+            "params": [
+              {
+                "name": "goalId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update goal"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

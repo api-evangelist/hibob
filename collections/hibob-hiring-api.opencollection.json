@@ -1,0 +1,69 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Bob (HiBob) Public Attendance Hiring API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Hiring",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search applications",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.hibob.com/v1/hiring/applications/search"
+          },
+          "docs": "Search applications"
+        },
+        {
+          "info": {
+            "name": "Search candidates",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.hibob.com/v1/hiring/candidates/search"
+          },
+          "docs": "Search candidates"
+        },
+        {
+          "info": {
+            "name": "Search job openings",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.hibob.com/v1/hiring/job-openings/search"
+          },
+          "docs": "Search job openings"
+        },
+        {
+          "info": {
+            "name": "Retrieve active career page job ads",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.hibob.com/v1/hiring/job-ads/search"
+          },
+          "docs": "Retrieve active career page job ads"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

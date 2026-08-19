@@ -1,0 +1,420 @@
+{
+  "item": [
+    {
+      "id": "b6a7540a-a10d-40ad-8b3f-fa75957e4438",
+      "name": "Attendance",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c7a55e15-4c94-41dd-90fd-15d23a78629f",
+          "name": "Fetch attendance entries",
+          "request": {
+            "name": "Fetch attendance entries",
+            "description": {},
+            "url": {
+              "path": [
+                "attendance",
+                "entries",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"fromDate\": \"<date>\",\n  \"toDate\": \"<date>\",\n  \"employeeIds\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "31b494c0-d8a3-440b-a874-1315c2e445ac",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "attendance",
+                    "entries",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fromDate\": \"<date>\",\n  \"toDate\": \"<date>\",\n  \"employeeIds\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a8d0f3d8-6845-452b-b266-0c7d6bae34a8",
+          "name": "Bulk create attendance entries",
+          "request": {
+            "name": "Bulk create attendance entries",
+            "description": {},
+            "url": {
+              "path": [
+                "attendance",
+                "entries"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"employeeId\": \"<string>\",\n    \"date\": \"<date>\",\n    \"startTime\": \"<string>\",\n    \"endTime\": \"<string>\"\n  },\n  {\n    \"employeeId\": \"<string>\",\n    \"date\": \"<date>\",\n    \"startTime\": \"<string>\",\n    \"endTime\": \"<string>\"\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d4e433ff-babc-413b-be73-314c84cdd229",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "attendance",
+                    "entries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"employeeId\": \"string\",\n    \"date\": \"2004-05-22\",\n    \"startTime\": \"string\",\n    \"endTime\": \"string\"\n  },\n  {\n    \"employeeId\": \"string\",\n    \"date\": \"1950-01-03\",\n    \"startTime\": \"string\",\n    \"endTime\": \"string\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b70cbc78-328b-40f2-a5f1-e5508b7fb009",
+          "name": "Update entries",
+          "request": {
+            "name": "Update entries",
+            "description": {},
+            "url": {
+              "path": [
+                "attendance",
+                "employees",
+                ":employeeId",
+                "entries"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "employeeId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"employeeId\": \"<string>\",\n  \"date\": \"<date>\",\n  \"startTime\": \"<string>\",\n  \"endTime\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "8531c448-98ef-4064-b5ac-8ed279592b31",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "attendance",
+                    "employees",
+                    ":employeeId",
+                    "entries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "employeeId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"employeeId\": \"<string>\",\n  \"date\": \"<date>\",\n  \"startTime\": \"<string>\",\n  \"endTime\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a91327f9-d5fe-40d8-859d-9e8218507110",
+          "name": "Delete entry",
+          "request": {
+            "name": "Delete entry",
+            "description": {},
+            "url": {
+              "path": [
+                "attendance-entries",
+                ":entryId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "entryId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "89e84488-cceb-4afa-8388-a3954b5b7620",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "attendance-entries",
+                    ":entryId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "entryId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.hibob.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "8faf74a4-e625-4433-8392-e204a6779cfe",
+    "name": "Bob (HiBob) Public Attendance API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Bob's Public API for managing employees, attendance, projects, hiring,\ngoals, documents, learning, and webhooks. Generated best-effort from\npublic docs at https://apidocs.hibob.com/.\n\n\nContact Support:\n Name: HiBob",
+      "type": "text/plain"
+    }
+  }
+}

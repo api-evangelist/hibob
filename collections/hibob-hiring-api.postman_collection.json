@@ -1,0 +1,321 @@
+{
+  "item": [
+    {
+      "id": "87c79668-e161-40b5-b9b3-cf8889d769bc",
+      "name": "Hiring",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7df38370-980a-4148-84eb-13b96cc137d5",
+          "name": "Search applications",
+          "request": {
+            "name": "Search applications",
+            "description": {},
+            "url": {
+              "path": [
+                "hiring",
+                "applications",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d1c1d900-13ef-4635-953a-80b492010d23",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "hiring",
+                    "applications",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bc1e8fd2-402d-436f-983b-aaf651038ffb",
+          "name": "Search candidates",
+          "request": {
+            "name": "Search candidates",
+            "description": {},
+            "url": {
+              "path": [
+                "hiring",
+                "candidates",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "212d371f-f7c8-4652-a603-efa3639ec376",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "hiring",
+                    "candidates",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7a6b87c1-4ffc-4f20-a5a4-ddaa962ec891",
+          "name": "Search job openings",
+          "request": {
+            "name": "Search job openings",
+            "description": {},
+            "url": {
+              "path": [
+                "hiring",
+                "job-openings",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6838badb-453c-4cdc-bb7e-28302728df79",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "hiring",
+                    "job-openings",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "041a9b31-d9cf-4bec-b872-cc96eca06b06",
+          "name": "Retrieve active career page job ads",
+          "request": {
+            "name": "Retrieve active career page job ads",
+            "description": {},
+            "url": {
+              "path": [
+                "hiring",
+                "job-ads",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9fe225ea-0153-4dce-a9ec-540783dde72f",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "hiring",
+                    "job-ads",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.hibob.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "033d6915-4b66-4b17-ad68-0432d1cabed4",
+    "name": "Bob (HiBob) Public Attendance Hiring API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Bob's Public API for managing employees, attendance, projects, hiring,\ngoals, documents, learning, and webhooks. Generated best-effort from\npublic docs at https://apidocs.hibob.com/.\n\n\nContact Support:\n Name: HiBob",
+      "type": "text/plain"
+    }
+  }
+}

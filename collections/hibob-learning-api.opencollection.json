@@ -1,0 +1,54 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Bob (HiBob) Public Attendance Learning API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Learning",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create LMS integration",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.hibob.com/v1/learning/lms-integrations"
+          },
+          "docs": "Create LMS integration"
+        },
+        {
+          "info": {
+            "name": "Create training content",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.hibob.com/v1/learning/lms-integrations/:provider-identifier/training-content",
+            "params": [
+              {
+                "name": "provider-identifier",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Create training content"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
