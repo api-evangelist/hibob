@@ -42,6 +42,11 @@ apis:
   tags:
   - Employees
   - Time Off
+  - Task
+  - Documents
+  tags_raw:
+  - Employees
+  - Time Off
   - Tasks
   - Documents
   properties:
@@ -59,6 +64,9 @@ apis:
   humanURL: https://apidocs.hibob.com/docs/webhooks
   baseURL: https://apidocs.hibob.com/docs/webhooks
   tags:
+  - Webhook
+  - Event
+  tags_raw:
   - Webhooks
   - Events
   properties:
@@ -140,6 +148,8 @@ apis:
   humanURL: https://apidocs.hibob.com/
   baseURL: https://api.hibob.com/v1
   tags:
+  - Project
+  tags_raw:
   - Projects
   properties:
   - type: OpenAPI
